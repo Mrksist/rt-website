@@ -1,0 +1,47 @@
+html,body {
+    background-color: #1F2223;
+    height: 100%;
+    margin: 0;
+}
+
+.text {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+h1.text {
+    text-align: center;
+}
+
+div.root {
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+
+p {
+    color: white;
+}
+
+.jsv {
+    height: 0;
+    width: 0;
+    padding-left: 4EM;
+}
+
+.wallpaper-img {
+    background-image: url("../img/oboi.jpg");
+    background-size: cover;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid white;
+}
+
+td, th {
+    padding: 4px;
+    border: 1px solid white;
+    text-align: left;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
