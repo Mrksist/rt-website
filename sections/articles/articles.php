@@ -1,4 +1,4 @@
-<?php 
+<?php
     namespace SITE;
     class Page {
         public $topdescription;
@@ -9,7 +9,7 @@
         {
             include 'scripts/php/echotable.php';
             include 'scripts/php/db.php';
-            $this->$tablename = explode("table=",file_get_contents("rt.conf"))[1];
+            $this->$tablename = explode("\n",explode("table=",file_get_contents("rt.conf"))[1])[0];
             if(!isset($id)){
                 $this->topdescription = "Главная";
                 $this->ui = formNewsList($this->$tablename);

@@ -2,13 +2,15 @@
 <!--မြန်မာ-->
 <?php
     $I_GET_VAR = 'page';
-    if(!isset($_GET[$I_GET_VAR]) || $_GET[$I_GET_VAR] == "articles"){
+    include 'scripts/php/db.php';
+    if(!isset($_GET[$I_GET_VAR]) || $_GET[$I_GET_VAR] == $table){
         include 'sections/articles/articles.php';
     }
     else{
         if(file_exists('sections/'.$_GET[$I_GET_VAR].'/'.$_GET[$I_GET_VAR].'.php'))
         include 'sections/'.$_GET[$I_GET_VAR].'/'.$_GET[$I_GET_VAR].'.php';
-        else include 'sections/404/404.php';
+        else if ($_GET[$I_GET_VAR] != $table)
+        include 'sections/404/404.php';
     }
     if(isset($_GET['id']))
     $object = new SITE\Page($_GET['id']);
@@ -27,8 +29,8 @@
     <link rel="stylesheet" type="text/css" href="/style/main.css" />
     <link rel="stylesheet" type="text/css" href="/style/frame.css" />
     <link rel="stylesheet" type="text/css" href="/style/content.css" />
-    <?php 
-      if(isset($object->addscript)) echo '<script type="text/javascript" src="'.$object->addscript.'"></script>'; 
+    <?php
+      if(isset($object->addscript)) echo '<script type="text/javascript" src="'.$object->addscript.'"></script>';
     ?>
   </head>
   <body>
@@ -90,4 +92,3 @@
     <script type="text/javascript" src="/scripts/js/load.js"></script>
   </body>
 </html>
-<?php $conn->close(); ?>
